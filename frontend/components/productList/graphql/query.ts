@@ -11,6 +11,8 @@ export const GET_PRODUCTS = gql`
     description
     category
     brand_id
+    rating
+    ratingCount
     Brand {
       name
       id

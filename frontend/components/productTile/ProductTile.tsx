@@ -11,7 +11,10 @@ const ProductTile: React.FC<Omit<product, "id" | "Brand">> = ({
     description,
     category,
     brandName,
+    rating,
+    ratingCount
 }) => {
+    console.log(rating, ratingCount)
 
     const normalizePrice = (price: number) => {
         if (price % 1 === 0) {
@@ -39,6 +42,7 @@ const ProductTile: React.FC<Omit<product, "id" | "Brand">> = ({
                         </span>
                     )}
                 </p>
+                <Rating rating={rating} ratingCount={ratingCount} />
                 <p className={styles.brandName}>
                     {brandName}
                     <span className={styles.productName}> {name}</span>

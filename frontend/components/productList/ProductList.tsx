@@ -3,6 +3,7 @@ import { GET_PRODUCTS } from "./graphql/query";
 import { useQuery } from "@apollo/client";
 import styles from "./productList.module.css";
 import ProductTile from "../productTile/ProductTile";
+import rating from "@/components/rating/Rating";
 
 export interface product {
     id: number;
@@ -14,6 +15,8 @@ export interface product {
     Brand: { name: string };
     category: string;
     brandName: string;
+    ratingCount: number,
+    rating: number
 }
 
 export default function ProductList() {
@@ -37,6 +40,8 @@ export default function ProductList() {
                             description={product.description}
                             category={product.category}
                             brandName={product.Brand.name}
+                            rating={product.rating}
+                            ratingCount={product.ratingCount}
                         />
                     ))}
             </div>
